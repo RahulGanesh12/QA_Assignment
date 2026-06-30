@@ -8,13 +8,9 @@ dotenv.config({
 });
 
 type Base_URLS = {
-    QA_BASE_URL: string,
-    DEV_BASE_URL: string,
-    STAGING_BASE_URL: string
+    BASE_URL: string,
 }
 
 export const Navigational_Urls: Base_URLS = {
-    QA_BASE_URL: process.env.QA_BASE_URL!,
-    DEV_BASE_URL: process.env.DEV_BASE_URL!,
-    STAGING_BASE_URL: process.env.STAGING_BASE_URL!
+    BASE_URL: process.env.BASE_URL!,
 };

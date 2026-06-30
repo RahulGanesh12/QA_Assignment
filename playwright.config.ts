@@ -31,6 +31,7 @@ export default defineConfig({
     actionTimeout: 10000,
     navigationTimeout: 10000,
     viewport: null,
+    testIdAttribute: 'data-test',
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 

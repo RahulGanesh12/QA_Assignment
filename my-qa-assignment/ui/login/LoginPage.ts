@@ -19,6 +19,12 @@ export class LoginPage {
     }
 
     async validateSuccessfulLogin({ title }: { title: string }) {
-        await expect(this.productPageLocators.title).toHaveText(title);
+        await expect(this.productPageLocators.title.locator(".app_logo")).toHaveText(title);
+    }
+
+    async validateUnsuccessfullLogin({ title }: { title: string }) {
+        await expect(this.productPageLocators.title).not.toBeVisible();
+        await expect(this.loginLocators.errorWrapper).toBeVisible();
+        await expect(this.loginLocators.errorWrapper).toHaveText("Epic sadface: Sorry, this user has been locked out.");
     }
 }
