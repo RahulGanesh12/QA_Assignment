@@ -1,0 +1,7 @@
+{
+    "productsPage": "/inventory.html",
+    "cartsPage": "/cart.html",
+    "checkoutPage": "/checkout-step-one.html",
+    "checkoutOverviewPage": "/checkout-step-two.html",
+    "checkoutCompletePage": "/checkout-complete.html"
+}

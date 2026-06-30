@@ -1,0 +1,1 @@
+export type CreateUserPayload = { name: string, job: string };
