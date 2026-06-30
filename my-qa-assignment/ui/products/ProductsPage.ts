@@ -16,4 +16,7 @@ export class ProductsPage {
         await expect(this.productPageLocators.cartIcon).toHaveText("2");
     }
 
+    async clickOnCartIcon() {
+        await this.productPageLocators.cartIcon.click();
+    }
 }
