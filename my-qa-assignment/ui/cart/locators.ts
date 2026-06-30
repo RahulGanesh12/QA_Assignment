@@ -2,9 +2,9 @@ import { Locator, Page } from "@playwright/test";
 
 export class CartLocators {
 
-    readonly title: Locator;
+    readonly checkout: Locator;
 
     constructor(page: Page) {
-        this.title = page.getByTestId("primary-header");
+        this.checkout = page.getByTestId("checkout");
     }
 }

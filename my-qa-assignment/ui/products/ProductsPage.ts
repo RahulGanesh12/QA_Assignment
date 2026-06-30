@@ -9,11 +9,11 @@ export class ProductsPage {
         this.productPageLocators = new ProductLocators(page);
     }
 
-    async verifyProductsPage() {
-        await this.productPageLocators.title.waitFor();
+    async addProductToCart() {
+        await this.productPageLocators.backPack.click();
+        await this.productPageLocators.bikeLight.click();
+        await expect(this.productPageLocators.cartIcon).toBeVisible();
+        await expect(this.productPageLocators.cartIcon).toHaveText("2");
     }
 
-    async validateProductsPage({ title }: { title: string }) {
-        await expect(this.productPageLocators.title).toHaveText(title);
-    }
 }

@@ -9,11 +9,7 @@ export class CartPage {
         this.cartLocators = new CartLocators(page);
     }
 
-    async verifyCartPage() {
-        await this.cartLocators.title.waitFor();
-    }
-
-    async validateCartPage({ title }: { title: string }) {
-        await expect(this.cartLocators.title).toHaveText(title);
+    async clickCheckOut() {
+        await this.cartLocators.checkout.click();
     }
 }

@@ -9,11 +9,18 @@ export class CheckoutPage {
         this.checkoutLocators = new CheckoutLocators(page);
     }
 
-    async verifyCheckoutPage() {
-        await this.checkoutLocators.title.waitFor();
+    async enterCheckoutInfo({ firstName, lastName, postalCode }: { firstName: string; lastName: string; postalCode: string }) {
+        await this.checkoutLocators.firstName.fill(firstName);
+        await this.checkoutLocators.lastName.fill(lastName);
+        await this.checkoutLocators.postalCode.fill(postalCode);
+        await this.checkoutLocators.continue.click();
     }
 
-    async validateCheckoutPage({ title }: { title: string }) {
-        await expect(this.checkoutLocators.title).toHaveText(title);
+    async clickFinish() {
+        await this.checkoutLocators.finish.click();
+    }
+
+    async validateCheckoutSuccess({ successMessage }: { successMessage: string }) {
+        await expect(this.checkoutLocators.success).toHaveText(successMessage);
     }
 }

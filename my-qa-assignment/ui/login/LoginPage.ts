@@ -6,8 +6,10 @@ export class LoginPage {
 
     private readonly loginLocators: LoginLocators;
     private readonly productPageLocators: ProductLocators;
+    private readonly page: Page;
 
     constructor(page: Page) {
+        this.page = page;
         this.loginLocators = new LoginLocators(page);
         this.productPageLocators = new ProductLocators(page);
     }
@@ -22,9 +24,13 @@ export class LoginPage {
         await expect(this.productPageLocators.title.locator(".app_logo")).toHaveText(title);
     }
 
-    async validateUnsuccessfullLogin({ title }: { title: string }) {
+    async validateUnsuccessfullLogin() {
         await expect(this.productPageLocators.title).not.toBeVisible();
         await expect(this.loginLocators.errorWrapper).toBeVisible();
         await expect(this.loginLocators.errorWrapper).toHaveText("Epic sadface: Sorry, this user has been locked out.");
+    }
+
+    async storeCookies({ path }: { path: string }) {
+        await this.page.context().storageState({ path });
     }
 }

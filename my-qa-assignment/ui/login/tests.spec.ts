@@ -22,11 +22,12 @@ test.beforeEach("Navigate to the login page", async () => {
 test("Login and validate", async () => {
     await uiRegistry.loginPage.verifyLogin({ userName: UiCredentials.VALIDUSERNAME, password: UiCredentials.PASSWORD });
     await uiRegistry.loginPage.validateSuccessfulLogin({ title: "Swag Labs" });
+    await uiRegistry.loginPage.storeCookies({ path: 'my-qa-assignment/ui/utils/login-cookies/login-cookies.json' });
 });
 
 test("Login with invalid credentials and validate", async () => {
     await uiRegistry.loginPage.verifyLogin({ userName: UiCredentials.LOCKEDUSERNAME, password: UiCredentials.PASSWORD });
-    await uiRegistry.loginPage.validateUnsuccessfullLogin({ title: "Swag Labs" });
+    await uiRegistry.loginPage.validateUnsuccessfullLogin();
 });
 
 test.afterAll("Close the browsers", async () => {
