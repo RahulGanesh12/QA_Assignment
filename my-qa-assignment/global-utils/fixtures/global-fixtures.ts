@@ -1,15 +1,14 @@
-// import { test as base } from "@playwright/test";
-// import { UiInstanceRegistry } from "../../ui/utils/instance-registry/instance.registry";
+import { test as base } from "@playwright/test";
+import { APIInstanceRegistry } from "../../api/utils/instance-registry/instance.registry";
 
-// interface CustomFixtures {
-//     uiRegistry: UiInstanceRegistry;
-// }
+interface CustomFixtures {
+    apiRegistry: APIInstanceRegistry;
+}
 
-// export const test = base.extend<CustomFixtures>({
-//     uiRegistry: async ({ page }, use) => {
-//         const registry = new UiInstanceRegistry(page);
-//         await use(registry);
-//     },
-// });
+export const test = base.extend<CustomFixtures>({
+    apiRegistry: async ({ page }, use) => {
+        await use(new APIInstanceRegistry());
+    },
+});
 
-// export { expect } from "@playwright/test";
+export { expect } from "@playwright/test";

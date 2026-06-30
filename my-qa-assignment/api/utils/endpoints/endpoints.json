@@ -1,1 +1,4 @@
-{}
+{
+    "fetchUsers":"/api/users?page=2",
+    "createUser":" /api/users"
+}
