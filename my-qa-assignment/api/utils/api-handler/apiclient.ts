@@ -43,10 +43,17 @@ export class ApiClient {
             throw new Error("API request context is not initialized. Call setRequestContext() first.");
         }
 
+        const data = options?.payload === undefined
+            ? undefined
+            : typeof options.payload === "string"
+                ? options.payload
+                : JSON.stringify(options.payload);
+
         return this.requestContext.fetch(fullUrl, {
             method,
             headers,
-            data: options?.payload,
+            data,
+            ignoreHTTPSErrors: true,
         });
     }
 

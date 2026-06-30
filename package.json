@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "A comprehensive Playwright-based testing framework for API and UI automation. Includes Page Object Model pattern, multi-page e-commerce testing (Login, Products, Cart, Checkout), API handlers with authentication, test data management, global utilities, fixtures, and HTML reporting. CI/CD ready.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:api:add-user": "playwright test my-qa-assignment/api/tests/add-users.spec.ts --project=chromium",
+    "test:api:fetch-users": "playwright test my-qa-assignment/api/tests/fetch-users.spec.ts --project=chromium",
+    "test:ui:login": "playwright test my-qa-assignment/ui/login/tests.spec.ts --project=chromium",
+    "test:ui:products": "playwright test my-qa-assignment/ui/products/tests.spec.ts --project=chromium",
+    "test:ui:checkout": "playwright test my-qa-assignment/ui/integration-tests/intgeration-tests.spec.ts --project=chromium"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RahulGanesh12/QA_Assignment.git"

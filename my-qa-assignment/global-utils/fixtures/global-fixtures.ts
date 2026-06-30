@@ -5,9 +5,16 @@ interface CustomFixtures {
     apiRegistry: APIInstanceRegistry;
 }
 
+let sharedApiRegistry: APIInstanceRegistry | undefined;
+
 export const test = base.extend<CustomFixtures>({
-    apiRegistry: async ({ page }, use) => {
-        await use(new APIInstanceRegistry());
+    apiRegistry: async ({ request }, use) => {
+        if (!sharedApiRegistry) {
+            sharedApiRegistry = new APIInstanceRegistry();
+        }
+
+        await sharedApiRegistry.apiClientInstance.setRequestContext(request);
+        await use(sharedApiRegistry);
     },
 });
 

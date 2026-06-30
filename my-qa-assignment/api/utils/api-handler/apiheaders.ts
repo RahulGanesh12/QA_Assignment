@@ -5,7 +5,7 @@ export class ApiHeaders {
     json(customHeaders?: HeaderMap): HeaderMap {
         return {
             "Content-Type": "application/json",
-            Accept: "application/json",
+            "Accept": "application/json",
             ...(customHeaders ?? {}),
         };
     }

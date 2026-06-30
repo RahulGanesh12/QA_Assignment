@@ -1,1 +1,7 @@
 node_modules
+
+# Keep environment and cookie files local for assessment purposes.
+# Uncomment the lines below before committing or pushing to avoid leaking secrets.
+# **/*.env
+# **/login-cookies/*.json
+# **/login-cookies.json
