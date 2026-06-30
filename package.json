@@ -1,0 +1,23 @@
+{
+  "name": "qa_assignment",
+  "version": "1.0.0",
+  "description": "A comprehensive Playwright-based testing framework for API and UI automation. Includes Page Object Model pattern, multi-page e-commerce testing (Login, Products, Cart, Checkout), API handlers with authentication, test data management, global utilities, fixtures, and HTML reporting. CI/CD ready.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RahulGanesh12/QA_Assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RahulGanesh12/QA_Assignment/issues"
+  },
+  "homepage": "https://github.com/RahulGanesh12/QA_Assignment#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}
