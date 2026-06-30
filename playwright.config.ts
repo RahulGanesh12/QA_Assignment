@@ -1,5 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
+const TEST_ENV = (process.env.TEST_ENV || (process.env.CI ? 'qa' : 'qa')).toLowerCase();
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
