@@ -19,4 +19,18 @@ export class ProductsPage {
     async clickOnCartIcon() {
         await this.productPageLocators.cartIcon.click();
     }
+
+    async sort() {
+        await this.productPageLocators.sort.click();
+        await this.productPageLocators.sort.selectOption("Price (low to high)");
+        let values = await this.productPageLocators.price.allTextContents();
+        const firstPrice = parseFloat(values[0].replace("$", ""));
+
+        const isLowest = values.every(price =>
+            firstPrice <= parseFloat(price.replace("$", ""))
+        );
+        await expect(isLowest).toBeTruthy();
+
+    }
+
 }

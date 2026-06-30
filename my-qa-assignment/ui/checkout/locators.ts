@@ -8,6 +8,7 @@ export class CheckoutLocators {
     readonly continue: Locator;
     readonly finish: Locator;
     readonly success: Locator;
+    readonly backtoProducts: Locator;
 
     constructor(page: Page) {
         this.firstName = page.getByTestId("firstName");
@@ -16,5 +17,6 @@ export class CheckoutLocators {
         this.continue = page.getByTestId("continue");
         this.finish = page.getByTestId("finish");
         this.success = page.getByTestId("complete-header");
+        this.backtoProducts = page.getByTestId("back-to-products");
     }
 }

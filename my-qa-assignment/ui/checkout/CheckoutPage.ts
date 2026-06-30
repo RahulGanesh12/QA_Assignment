@@ -23,4 +23,8 @@ export class CheckoutPage {
     async validateCheckoutSuccess({ successMessage }: { successMessage: string }) {
         await expect(this.checkoutLocators.success).toHaveText(successMessage);
     }
+
+    async clickBackToProducts() {
+        await this.checkoutLocators.backtoProducts.click();
+    }
 }

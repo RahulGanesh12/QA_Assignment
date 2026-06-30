@@ -40,6 +40,8 @@ test("Login, add products, checkout successfully", async () => {
 
     await uiRegistry.checkoutPage.clickFinish();
     await uiRegistry.checkoutPage.validateCheckoutSuccess({ successMessage: "Thank you for your order!" });
+    await uiRegistry.checkoutPage.clickBackToProducts();
+    await uiRegistry.productsPage.sort();
 });
 
 test.afterAll(async () => {
